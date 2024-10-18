@@ -14,7 +14,7 @@ public class GatewayConfig {
                 .route("product", r -> r.path("/products/**")  // Matches all paths starting with /products/
                         .uri("lb://PRODUCT")) // Uses load balancer to route to PRODUCT-SERVICE
                 // Route for the order service
-                .route("Order", r -> r.path("/orders/**")  // Matches all paths starting with /orders/
+                .route("order", r -> r.path("/orders/**")  // Matches all paths starting with /orders/
                         .uri("lb://ORDER")) // Uses load balancer to route to ORDER-SERVICE
                 .build();
     }
