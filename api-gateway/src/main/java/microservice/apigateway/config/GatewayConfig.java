@@ -11,11 +11,11 @@ public class GatewayConfig {
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
                 // Route for the product service
-                .route("product-service", r -> r.path("/products/**")  // Matches all paths starting with /products/
-                        .uri("lb://PRODUCT-SERVICE")) // Uses load balancer to route to PRODUCT-SERVICE
+                .route("product", r -> r.path("/products/**")  // Matches all paths starting with /products/
+                        .uri("lb://PRODUCT")) // Uses load balancer to route to PRODUCT-SERVICE
                 // Route for the order service
-                .route("order-service", r -> r.path("/orders/**")  // Matches all paths starting with /orders/
-                        .uri("lb://ORDER-SERVICE")) // Uses load balancer to route to ORDER-SERVICE
+                .route("order", r -> r.path("/orders/**")  // Matches all paths starting with /orders/
+                        .uri("lb://ORDER")) // Uses load balancer to route to ORDER-SERVICE
                 .build();
     }
 }
